@@ -32,7 +32,7 @@ Crypto.Util.RFC1751       Converts between 128-bit keys and human-readable
 import sys
 if sys.platform == "cli":
     import clr
-    clr.AddReference("IronPyCrypto.dll")
+    clr.AddReference("IronPyCrypto")
     import IronPyCrypto_Util_strxor as strxor
     import IronPyCrypto_Util_counter as _counter
     import IronPyCrypto_Random_OSRNG_winrandom as winrandom

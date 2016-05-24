@@ -41,18 +41,6 @@
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
   <ItemGroup>
-    <Reference Include="IronPython">
-      <HintPath>..\..\..\..\..\..\Program Files\IronPython 2.6\IronPython.dll</HintPath>
-    </Reference>
-    <Reference Include="IronPython.Modules">
-      <HintPath>..\..\..\..\..\..\Program Files\IronPython 2.6\IronPython.Modules.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Dynamic">
-      <HintPath>..\..\..\..\..\..\Program Files\IronPython 2.6\Microsoft.Dynamic.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Scripting">
-      <HintPath>..\..\..\..\..\..\Program Files\IronPython 2.6\Microsoft.Scripting.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -70,6 +58,7 @@
       <Link>runtests.py</Link>
     </None>
     <None Include="app.config" />
+    <None Include="paket.references" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\IronPyCrypto\IronPyCrypto.csproj">
@@ -77,4 +66,172 @@
       <Name>IronPyCrypto</Name>
     </ProjectReference>
   </ItemGroup>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v3.5'">
+      <ItemGroup>
+        <Reference Include="IronPython.Modules">
+          <HintPath>..\packages\IronPython\lib\Net35\IronPython.Modules.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="IronPython.SQLite">
+          <HintPath>..\packages\IronPython\lib\Net35\IronPython.SQLite.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="IronPython">
+          <HintPath>..\packages\IronPython\lib\Net35\IronPython.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="Microsoft.Dynamic">
+          <HintPath>..\packages\IronPython\lib\Net35\Microsoft.Dynamic.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="Microsoft.Scripting.AspNet">
+          <HintPath>..\packages\IronPython\lib\Net35\Microsoft.Scripting.AspNet.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="Microsoft.Scripting.Core">
+          <HintPath>..\packages\IronPython\lib\Net35\Microsoft.Scripting.Core.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="Microsoft.Scripting.Metadata">
+          <HintPath>..\packages\IronPython\lib\Net35\Microsoft.Scripting.Metadata.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="Microsoft.Scripting">
+          <HintPath>..\packages\IronPython\lib\Net35\Microsoft.Scripting.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0')">
+      <ItemGroup>
+        <Reference Include="IronPython.Modules">
+          <HintPath>..\packages\IronPython\lib\Net40\IronPython.Modules.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="IronPython.SQLite">
+          <HintPath>..\packages\IronPython\lib\Net40\IronPython.SQLite.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="IronPython.Wpf">
+          <HintPath>..\packages\IronPython\lib\Net40\IronPython.Wpf.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="IronPython">
+          <HintPath>..\packages\IronPython\lib\Net40\IronPython.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="Microsoft.Dynamic">
+          <HintPath>..\packages\IronPython\lib\Net40\Microsoft.Dynamic.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="Microsoft.Scripting.AspNet">
+          <HintPath>..\packages\IronPython\lib\Net40\Microsoft.Scripting.AspNet.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="Microsoft.Scripting.Metadata">
+          <HintPath>..\packages\IronPython\lib\Net40\Microsoft.Scripting.Metadata.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="Microsoft.Scripting">
+          <HintPath>..\packages\IronPython\lib\Net40\Microsoft.Scripting.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2')">
+      <ItemGroup>
+        <Reference Include="IronPython.Modules">
+          <HintPath>..\packages\IronPython\lib\Net45\IronPython.Modules.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="IronPython.SQLite">
+          <HintPath>..\packages\IronPython\lib\Net45\IronPython.SQLite.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="IronPython.Wpf">
+          <HintPath>..\packages\IronPython\lib\Net45\IronPython.Wpf.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="IronPython">
+          <HintPath>..\packages\IronPython\lib\Net45\IronPython.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="Microsoft.Dynamic">
+          <HintPath>..\packages\IronPython\lib\Net45\Microsoft.Dynamic.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="Microsoft.Scripting.AspNet">
+          <HintPath>..\packages\IronPython\lib\Net45\Microsoft.Scripting.AspNet.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="Microsoft.Scripting.Metadata">
+          <HintPath>..\packages\IronPython\lib\Net45\Microsoft.Scripting.Metadata.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="Microsoft.Scripting">
+          <HintPath>..\packages\IronPython\lib\Net45\Microsoft.Scripting.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+    <When Condition="$(TargetFrameworkIdentifier) == 'Silverlight' And $(TargetFrameworkVersion) == 'v5.0'">
+      <ItemGroup>
+        <Reference Include="IronPython.Modules">
+          <HintPath>..\packages\IronPython\lib\Sl5\IronPython.Modules.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="IronPython.SQLite">
+          <HintPath>..\packages\IronPython\lib\Sl5\IronPython.SQLite.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="IronPython">
+          <HintPath>..\packages\IronPython\lib\Sl5\IronPython.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="Microsoft.Dynamic">
+          <HintPath>..\packages\IronPython\lib\Sl5\Microsoft.Dynamic.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="Microsoft.Scripting.Silverlight">
+          <HintPath>..\packages\IronPython\lib\Sl5\Microsoft.Scripting.Silverlight.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="Microsoft.Scripting">
+          <HintPath>..\packages\IronPython\lib\Sl5\Microsoft.Scripting.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
 </Project>

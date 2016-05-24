@@ -37,17 +37,23 @@ namespace Testing
                 Dictionary<string, object> options = new Dictionary<string, object>();
                 // options["Debug"] = true;
                 ScriptEngine pyEngine = Python.CreateEngine(options);
-
+                //pyEngine.Runtime.LoadAssembly(typeof(Strxor).Assembly);
                 ScriptScope pyScope = pyEngine.CreateScope();
                 // assumes we are running in Testing\bin\Debug...so we have to go up three dirs to find the script
                 // string scriptPath = Path.GetFullPath(Path.Combine("..\\..\\..\\", "demo.py"));
-                string scriptPath = Path.GetFullPath(Path.Combine("..\\..\\..\\", "runtests.py"));
+                var current = Environment.CurrentDirectory;
+                
+                var solutionDir = Path.GetDirectoryName(Path.GetDirectoryName(Path.GetDirectoryName(current)));
+                string scriptPath = Path.Combine(solutionDir, "runtests.py");
                 string[] searchPaths = new String[5];
-                // not cross platform
-                searchPaths[1] = "C:\\Program Files\\IronPython 2.6";
-                searchPaths[2] = "C:\\Program Files\\IronPython 2.6\\DLLs";
-                searchPaths[3] = "C:\\Program Files\\IronPython 2.6\\Lib";
-                searchPaths[4] = "C:\\Program Files\\IronPython 2.6\\Lib\\site-packages";
+
+                var pythonPath = Path.Combine(solutionDir, "temp", "IronPython");
+                Console.WriteLine("Using python path '{0}'", pythonPath);
+                searchPaths[1] = pythonPath;
+                //searchPaths[2] = Path.Combine(pythonPath, "DLLs");
+                searchPaths[2] = current;
+                searchPaths[3] = Path.Combine(pythonPath, "Lib");
+                searchPaths[4] = Path.Combine(pythonPath, "Lib", "site-packages");
                 searchPaths[0] = Path.GetDirectoryName(scriptPath);
                 pyEngine.SetSearchPaths(searchPaths);
                 

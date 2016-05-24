@@ -37,7 +37,7 @@ using Microsoft.Scripting.Runtime;
 
 namespace IronPyCrypto.Util
 {
-    public class Strxor
+    public static class Strxor
     {
         // module documentation
         public const string __doc__ = "";
