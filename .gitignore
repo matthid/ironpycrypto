@@ -1,0 +1,16 @@
+*.suo
+*.lnk
+bin/*
+obj/*
+*.pyc
+demo.log
+IronPyCrypto.dll
+demo.log
+demo.py
+interactive.py
+IronPyCrypto/StyleCop.Cache
+IronPyCrypto/StyleCopViolations.xml
+temp/
+.paket/paket.exe
+.fake
+packages/
