@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{94263074-CD57-4AB7-9142-D8E212D34F38}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Crypto</RootNamespace>
+    <AssemblyName>Crypto</AssemblyName>
+    <DebugInfo>True</DebugInfo>
+    <TargetFrameworkProfile />
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SearchPath>..\IronPyCrypto\bin\Debug\</SearchPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+  </PropertyGroup>
+  <!--
+  <Import Project="$(PythonBinPath)\SharpDevelop.Build.Python.targets" />-->
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Cipher\__init__.py" />
+    <Compile Include="Hash\HMAC.py" />
+    <Compile Include="Hash\MD5.py" />
+    <Compile Include="Hash\RIPEMD.py" />
+    <Compile Include="Hash\RIPEMD160.py" />
+    <Compile Include="Hash\SHA.py" />
+    <Compile Include="Hash\__init__.py" />
+    <Compile Include="pct_warnings.py" />
+    <Compile Include="Protocol\AllOrNothing.py" />
+    <Compile Include="Protocol\Chaffing.py" />
+    <Compile Include="Protocol\__init__.py" />
+    <Compile Include="PublicKey\DSA.py" />
+    <Compile Include="PublicKey\ElGamal.py" />
+    <Compile Include="PublicKey\pubkey.py" />
+    <Compile Include="PublicKey\qNEW.py" />
+    <Compile Include="PublicKey\RSA.py" />
+    <Compile Include="PublicKey\_DSA.py" />
+    <Compile Include="PublicKey\_RSA.py" />
+    <Compile Include="PublicKey\_slowmath.py" />
+    <Compile Include="PublicKey\__init__.py" />
+    <Compile Include="Random\Fortuna\FortunaAccumulator.py" />
+    <Compile Include="Random\Fortuna\FortunaGenerator.py" />
+    <Compile Include="Random\Fortuna\SHAd256.py" />
+    <Compile Include="Random\Fortuna\__init__.py" />
+    <Compile Include="Random\OSRNG\fallback.py" />
+    <Compile Include="Random\OSRNG\nt.py" />
+    <Compile Include="Random\OSRNG\posix.py" />
+    <Compile Include="Random\OSRNG\rng_base.py" />
+    <Compile Include="Random\OSRNG\__init__.py" />
+    <Compile Include="Random\random.py" />
+    <Compile Include="Random\_UserFriendlyRNG.py" />
+    <Compile Include="Random\__init__.py" />
+    <Compile Include="SelfTest\Cipher\common.py" />
+    <Compile Include="SelfTest\Cipher\test_AES.py" />
+    <Compile Include="SelfTest\Cipher\test_ARC2.py" />
+    <Compile Include="SelfTest\Cipher\test_ARC4.py" />
+    <Compile Include="SelfTest\Cipher\test_Blowfish.py" />
+    <Compile Include="SelfTest\Cipher\test_CAST.py" />
+    <Compile Include="SelfTest\Cipher\test_DES.py" />
+    <Compile Include="SelfTest\Cipher\test_DES3.py" />
+    <Compile Include="SelfTest\Cipher\test_XOR.py" />
+    <Compile Include="SelfTest\Cipher\__init__.py" />
+    <Compile Include="SelfTest\Hash\common.py" />
+    <Compile Include="SelfTest\Hash\test_HMAC.py" />
+    <Compile Include="SelfTest\Hash\test_MD2.py" />
+    <Compile Include="SelfTest\Hash\test_MD4.py" />
+    <Compile Include="SelfTest\Hash\test_MD5.py" />
+    <Compile Include="SelfTest\Hash\test_RIPEMD.py" />
+    <Compile Include="SelfTest\Hash\test_SHA.py" />
+    <Compile Include="SelfTest\Hash\test_SHA256.py" />
+    <Compile Include="SelfTest\Hash\__init__.py" />
+    <Compile Include="SelfTest\Protocol\test_chaffing.py" />
+    <Compile Include="SelfTest\Protocol\test_rfc1751.py" />
+    <Compile Include="SelfTest\Protocol\__init__.py" />
+    <Compile Include="SelfTest\PublicKey\test_DSA.py" />
+    <Compile Include="SelfTest\PublicKey\test_RSA.py" />
+    <Compile Include="SelfTest\PublicKey\__init__.py" />
+    <Compile Include="SelfTest\Random\Fortuna\test_FortunaAccumulator.py" />
+    <Compile Include="SelfTest\Random\Fortuna\test_FortunaGenerator.py" />
+    <Compile Include="SelfTest\Random\Fortuna\test_SHAd256.py" />
+    <Compile Include="SelfTest\Random\Fortuna\__init__.py" />
+    <Compile Include="SelfTest\Random\OSRNG\test_fallback.py" />
+    <Compile Include="SelfTest\Random\OSRNG\test_generic.py" />
+    <Compile Include="SelfTest\Random\OSRNG\test_nt.py" />
+    <Compile Include="SelfTest\Random\OSRNG\test_posix.py" />
+    <Compile Include="SelfTest\Random\OSRNG\test_winrandom.py" />
+    <Compile Include="SelfTest\Random\OSRNG\__init__.py" />
+    <Compile Include="SelfTest\Random\test_random.py" />
+    <Compile Include="SelfTest\Random\test_rpoolcompat.py" />
+    <Compile Include="SelfTest\Random\__init__.py" />
+    <Compile Include="SelfTest\st_common.py" />
+    <Compile Include="SelfTest\Util\test_Counter.py" />
+    <Compile Include="SelfTest\Util\test_number.py" />
+    <Compile Include="SelfTest\Util\test_winrandom.py" />
+    <Compile Include="SelfTest\Util\__init__.py" />
+    <Compile Include="SelfTest\__init__.py" />
+    <Compile Include="Util\Counter.py" />
+    <Compile Include="Util\number.py" />
+    <Compile Include="Util\python_compat.py" />
+    <Compile Include="Util\randpool.py" />
+    <Compile Include="Util\RFC1751.py" />
+    <Compile Include="Util\winrandom.py" />
+    <Compile Include="Util\_number_new.py" />
+    <Compile Include="Util\__init__.py" />
+    <Compile Include="__init__.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Cipher" />
+    <Folder Include="Hash" />
+    <Folder Include="Protocol" />
+    <Folder Include="PublicKey" />
+    <Folder Include="Random" />
+    <Folder Include="Random\Fortuna" />
+    <Folder Include="Random\OSRNG" />
+    <Folder Include="SelfTest" />
+    <Folder Include="SelfTest\Cipher" />
+    <Folder Include="SelfTest\Hash" />
+    <Folder Include="SelfTest\Protocol" />
+    <Folder Include="SelfTest\PublicKey" />
+    <Folder Include="SelfTest\Random" />
+    <Folder Include="SelfTest\Random\Fortuna" />
+    <Folder Include="SelfTest\Random\OSRNG" />
+    <Folder Include="SelfTest\Util" />
+    <Folder Include="Util" />
+    <ProjectReference Include="..\IronPyCrypto\IronPyCrypto.csproj">
+      <Project>{C40BDC10-8303-44EB-ACBB-6406D569D171}</Project>
+      <Name>IronPyCrypto</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>

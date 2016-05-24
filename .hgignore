@@ -1,0 +1,12 @@
+glob:*.suo
+glob:*.lnk
+glob:bin/*
+glob:obj/*
+glob:*.pyc
+glob demo.log
+glob:IronPyCrypto.dll
+glob:demo.log
+glob:demo.py
+glob:interactive.py
+glob:IronPyCrypto/StyleCop.Cache
+glob:IronPyCrypto/StyleCopViolations.xml

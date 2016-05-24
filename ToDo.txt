@@ -1,0 +1,13 @@
+Complete going through the Hash and Cipher programs.  Add the license and do the following:
+
+at the top of the 'module':
+[assembly: PythonModule("array", typeof(IronPython.Modules.ArrayModule))]
+
+Assign a doc string to the overall module:
+        public const string __doc__ = "Provides arrays for native data types.  These can be used for compact storage or native interop via ctypes";
+
+use this in the methods:
+            [Documentation("Size of the resulting digest in bytes (constant)")]
+
+throw python exceptions:
+                if (typecode != other.typecode) throw PythonOps.TypeError("cannot add different typecodes");
