@@ -45,8 +45,7 @@ __all__ = ['new', 'digest_size']
 
 import string
 
-from IronPyCrypto_Util_strxor import strxor_c
-#from Crypto.Util.strxor import strxor_c
+from Crypto.Util.strxor import strxor_c
 
 # The size of the digests returned by HMAC depends on the underlying
 # hashing module used.
